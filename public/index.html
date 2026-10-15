@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero SMS - Malaysia Temporary Numbers</title>
+  <meta name="description" content="Personal portal to get Malaysia temporary SMS numbers for KFC, Chagee, ZUS Coffee and any other service with live wallet balance.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2224%22>🇲🇾</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <span class="brand-title">HeroSMS</span>
+          <span class="brand-tag">by Pius</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Prominent Wallet Balance Card -->
+        <div class="balance-card" id="balanceCard" title="Click to refresh balance">
+          <div class="balance-meta">
+            <span class="balance-label">WALLET BALANCE</span>
+            <span class="balance-status" id="balanceStatusDot"></span>
+          </div>
+          <div class="balance-value-row">
+            <span class="balance-currency" id="balanceCurrency">$</span>
+            <span class="balance-amount" id="balanceAmount">--.--</span>
+            <button class="icon-btn refresh-btn" id="refreshBalanceBtn" aria-label="Refresh balance">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container main-content">
+
+    <!-- Active Numbers Section (Supports multiple numbers waiting simultaneously) -->
+    <section class="active-numbers-section hidden" id="activeNumbersSection">
+      <div class="active-section-header">
+        <div class="active-section-title-group">
+          <h2 class="active-section-title">Active Numbers Waiting for SMS</h2>
+          <span class="active-counter-badge" id="activeCounterBadge">1 Waiting</span>
+        </div>
+      </div>
+      <div class="active-numbers-grid" id="activeNumbersGrid">
+        <!-- Dynamically populated with active cards -->
+      </div>
+    </section>
+
+    <!-- Order Temporary Number Section -->
+    <section class="card order-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2 class="card-title">Get Temporary Number</h2>
+        </div>
+      </div>
+
+      <!-- Service Selection Section -->
+      <div class="service-selection-section">
+        <label class="section-label">SELECT SERVICE</label>
+
+        <!-- 4 Primary Choice Cards: KFC, Chagee, ZUS Coffee, General -->
+        <div class="featured-services-grid" id="featuredServicesGrid">
+          <!-- KFC -->
+          <button class="service-card active" data-service-code="fz" data-service-name="KFC" data-service-icon="🍗" data-price="0.07">
+            <div class="service-icon">🍗</div>
+            <div class="service-info">
+              <span class="service-name">KFC</span>
+              <span class="service-category">Food & Dining • $0.07</span>
+            </div>
+            <span class="service-check">✓</span>
+          </button>
+
+          <!-- Chagee -->
+          <button class="service-card" data-service-code="bwx" data-service-name="Chagee" data-service-icon="🧋" data-price="0.07">
+            <div class="service-icon">🧋</div>
+            <div class="service-info">
+              <span class="service-name">Chagee</span>
+              <span class="service-category">Fresh Milk Tea • $0.07</span>
+            </div>
+            <span class="service-check">✓</span>
+          </button>
+
+          <!-- ZUS Coffee -->
+          <button class="service-card" data-service-code="aik" data-service-name="ZUS Coffee" data-service-icon="☕" data-price="0.07">
+            <div class="service-icon">☕</div>
+            <div class="service-info">
+              <span class="service-name">ZUS Coffee</span>
+              <span class="service-category">Specialty Coffee • $0.07</span>
+            </div>
+            <span class="service-check">✓</span>
+          </button>
+
+          <!-- General -->
+          <button class="service-card" data-service-code="ot" data-service-name="General" data-service-icon="🌐" data-price="0.07">
+            <div class="service-icon">🌐</div>
+            <div class="service-info">
+              <span class="service-name">General</span>
+              <span class="service-category">Any Service • $0.07</span>
+            </div>
+            <span class="service-check">✓</span>
+          </button>
+        </div>
+
+        <!-- Optional Accordion for other services if needed -->
+        <div class="more-services-accordion">
+          <button class="accordion-toggle-btn" id="toggleMoreServicesBtn">
+            <span>Other Services</span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-panel hidden" id="moreServicesPanel">
+            <div class="search-input-wrapper">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="serviceSearchInput" placeholder="Search other services (e.g. WhatsApp, Shopee, Grab)...">
+            </div>
+            <div class="services-dropdown-list" id="servicesDropdownList">
+              <div class="loading-spinner-small">Loading service list...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="order-action-section">
+        <button class="btn btn-primary btn-lg order-btn" id="requestNumberBtn">
+          <span class="btn-spinner hidden" id="orderSpinner"></span>
+          <span class="order-btn-icon">⚡</span>
+          <span class="order-btn-text" id="orderBtnText">Buy Number for KFC ($0.07)</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
